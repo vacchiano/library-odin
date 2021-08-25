@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    color: #ffffff;
+    font-family: sans-serif;
+
+    /* outline: 1px solid white; */
+}
+
+body {
+    background-color: #121212;
+}
+
+hr {
+    border-bottom: 0;
+    border-top: 1px solid grey;
+    border-radius: 10px;
+
+    border-left: 0;
+    border-right: 0;
+
+}
+
+.container {
+    margin: 20px 40px;
+
+    max-width: 1920px;
+}
+
+.header {
+    margin: 20px 0px;
+}
+
+.book-list {
+    margin: 20px 10px;
+}
+
+.book-list .title {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.books {
+    display: grid;
+
+    justify-content: center;
+
+    width: 100%;
+
+    grid-template-columns: repeat(auto-fill, 260px);
+
+}
+
+.books .card {
+    margin: 10px;
+    display: inline-block;
+    width: inherit;
+
+    max-width: 200px;
+    
+    padding: 20px 20px;
+    
+    background-color: #2d2c2c;
+    /* border: 1px solid white; */
+    border-radius: 5px;
+
+    box-shadow: 1px 1px 5px black;
+    
+}
+
+.books .card img {
+    max-width: inherit;
+    margin: 0 0 10px 0;
+
+    border: 1px solid darkslategray;
+    border-radius: 5px;
+}
+
+.books .card h3 {
+    line-height: 1.5rem;
+    letter-spacing: 0.1em;
+    margin: 5px;
+}
+
+.books .card p {
+    line-height: 1.5rem;
+    letter-spacing: 0.1em;
+    margin: 5px;
+}
+
+.books .card button {
+    border: none;
+    border-radius: 5px;
+
+    font-size: 1.2rem;
+
+    margin: 10px 0;
+
+    width: 45%;
+    min-height: 40px;
+
+    cursor: pointer;
+}
+
+.books .card .read {
+    background-color: darkolivegreen;
+}
+
+.books .card .read:hover {
+    background-color: green;
+}
+
+.books .card .unread {
+    background-color: darkorange;
+}
+
+.books .card .unread:hover {
+    background-color: orange;
+}
+
+.books .card .delete {
+    background-color: darkred;
+    cursor: pointer;
+
+    margin: 0 0 0 5%;
+}
+
+.books .card .delete:hover {
+    background-color: red;
+}
