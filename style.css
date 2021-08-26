@@ -30,6 +30,31 @@ hr {
     margin: 20px 0px;
 }
 
+.header h1 {
+    display: inline-block;
+}
+
+.header .rightNav {
+    float: right;
+    /* display: inline-block; */
+}
+
+.header .rightNav .addBook {
+    background-color: darkblue;
+    border: none;
+    padding: 10px 20px;
+
+    font-size: 1.2rem;
+    font-weight: 600;
+    
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.header .rightNav .addBook:hover {
+    background-color: darkorchid;
+}
+
 .book-list {
     margin: 20px 10px;
 }
@@ -56,6 +81,7 @@ hr {
     width: inherit;
 
     max-width: 200px;
+    /* max-height: 500px; */
     
     padding: 20px 20px;
     
@@ -65,6 +91,7 @@ hr {
 
     box-shadow: 1px 1px 5px black;
     
+
 }
 
 .books .card img {
@@ -87,18 +114,31 @@ hr {
     margin: 5px;
 }
 
+.books .card .btnContainer {
+    display: flex;
+    min-height: 70px;
+    flex-direction: row;
+}
+
 .books .card button {
     border: none;
     border-radius: 5px;
 
+    align-self: center;
+
     font-size: 1.2rem;
 
-    margin: 10px 0;
+    margin: 0px 0;
 
     width: 45%;
-    min-height: 40px;
+    /* min-height: 40px; */
+    height: 40px;
 
     cursor: pointer;
+
+    padding: 0;
+
+
 }
 
 .books .card .read {
@@ -107,6 +147,7 @@ hr {
 
 .books .card .read:hover {
     background-color: green;
+
 }
 
 .books .card .unread {
@@ -121,7 +162,8 @@ hr {
     background-color: darkred;
     cursor: pointer;
 
-    margin: 0 0 0 5%;
+    margin: 0 0 0 7%;
+
 }
 
 .books .card .delete:hover {

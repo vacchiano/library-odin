@@ -1,3 +1,3 @@
 ## Library Odin Project
 
-#### Based on JS objects 
+#### Project to build a library app to work on using JS objects 
