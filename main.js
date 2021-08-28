@@ -1,7 +1,6 @@
-
-
-
-let myLibrary = [];
+// RESET LOCAL STORGE IF NEEDED
+//localStorage.clear()
+let myLibrary;
 
 function Book(title, author, pages, isRead, imgSrc) {
     this.title = title
@@ -18,8 +17,8 @@ function addBookToLibrary(book) {
 }
 
 function RefreshStorage() {
-    localStorage.setItem("myLibrary", JSON.stringify(myLibrary))
-    console.log(JSON.parse(localStorage.getItem('myLibrary')));
+    localStorage.setItem("myLocalLibrary", JSON.stringify(myLibrary))
+    //console.log(JSON.parse(localStorage.getItem('myLibrary')));
 }
 
 // PRE-POPULATE WITH DATA IF NEEDED (uncommet below first time running)
@@ -36,19 +35,22 @@ function seedDummyData() {
 
 window.addEventListener('DOMContentLoaded', () => {
 
+    // If you want to re-seed data
+    // seedDummyData()
 
-
-    console.log(JSON.parse(localStorage.getItem('myLibrary')));
-
-    
-    if (localStorage.getItem('myLibrary')) {
-        myLibrary = JSON.parse(localStorage.getItem('myLibrary'))
-        renderBooks()
+    // checks for local storage and seeds if empy
+    if (localStorage.getItem('myLocalLibrary') === null) {
     } else {
-        myLibrary = []
-        seedDummyData()
-        localStorage.setItem("myLibrary", myLibrary)
+        if (JSON.parse(localStorage.getItem('myLocalLibrary')).length === 0) {
+            myLibrary = []
+            seedDummyData()
+            localStorage.setItem("myLocalLibrary", JSON.stringify(myLibrary))
+        } else {
+            myLibrary = JSON.parse(localStorage.getItem('myLocalLibrary'))
+        }
     }
+
+    renderBooks()
 
 
 
