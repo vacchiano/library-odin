@@ -45,15 +45,13 @@ window.addEventListener('DOMContentLoaded', () => {
             myLibrary = []
             seedDummyData()
             localStorage.setItem("myLocalLibrary", JSON.stringify(myLibrary))
+            renderBooks()
         } else {
             myLibrary = JSON.parse(localStorage.getItem('myLocalLibrary'))
+            renderBooks()
         }
     }
 
-    if (myLibrary.length > 0) {
-
-        renderBooks()
-    }
 
 
 
