@@ -1,6 +1,6 @@
 // RESET LOCAL STORGE IF NEEDED
 localStorage.clear()
-let myLibrary;
+let myLibrary = [];
 
 function Book(title, author, pages, isRead, imgSrc) {
     this.title = title
@@ -45,12 +45,14 @@ window.addEventListener('DOMContentLoaded', () => {
             myLibrary = []
             seedDummyData()
             localStorage.setItem("myLocalLibrary", JSON.stringify(myLibrary))
-            renderBooks()
+            //renderBooks()
         } else {
             myLibrary = JSON.parse(localStorage.getItem('myLocalLibrary'))
-            renderBooks()
+            //renderBooks()
         }
     }
+
+    renderBooks()
 
 
 
