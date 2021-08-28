@@ -50,7 +50,10 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    renderBooks()
+    if (myLibrary.length > 0) {
+
+        renderBooks()
+    }
 
 
 
