@@ -39,8 +39,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // seedDummyData()
 
     // checks for local storage and seeds if empy
-    if (localStorage.getItem('myLocalLibrary') === null) {
-    } else {
+    if (localStorage.getItem('myLocalLibrary') !== null) {
         if (JSON.parse(localStorage.getItem('myLocalLibrary')).length === 0) {
             myLibrary = []
             seedDummyData()
