@@ -18,38 +18,39 @@ function addBookToLibrary(book) {
 }
 
 function RefreshStorage() {
-    sessionStorage.setItem("myLibrary", JSON.stringify(myLibrary))
-    console.log(JSON.parse(sessionStorage.getItem('myLibrary')));
+    localStorage.setItem("myLibrary", JSON.stringify(myLibrary))
+    console.log(JSON.parse(localStorage.getItem('myLibrary')));
 }
 
-// PRE-POPULATE WITH DATA IF NEEDED
-// myBook = new Book('LOTR: The Hobbit', 'JR Tolkien', 245, true, 'https://images-na.ssl-images-amazon.com/images/I/91b0C2YNSrL.jpg');
-// myBook1 = new Book('Fellowship Of The Ring', 'JR Tolkien', 279, false, 'https://i.pinimg.com/originals/b0/9f/7f/b09f7f6a1abbabe397541bd01a902801.png');
-// myBook2 = new Book('LOTR: Two Towers', 'JR Tolkien', 312, true, 'https://d3525k1ryd2155.cloudfront.net/h/227/649/1336649227.0.x.jpg');
+// PRE-POPULATE WITH DATA IF NEEDED (uncommet below first time running)
+function seedDummyData() {
 
-// addBookToLibrary(myBook);
-// addBookToLibrary(myBook1);
-// addBookToLibrary(myBook2);
+    myBook = new Book('LOTR: The Hobbit', 'JR Tolkien', 245, true, 'https://images-na.ssl-images-amazon.com/images/I/91b0C2YNSrL.jpg');
+    myBook1 = new Book('Fellowship Of The Ring', 'JR Tolkien', 279, false, 'https://i.pinimg.com/originals/b0/9f/7f/b09f7f6a1abbabe397541bd01a902801.png');
+    myBook2 = new Book('LOTR: Two Towers', 'JR Tolkien', 312, true, 'https://d3525k1ryd2155.cloudfront.net/h/227/649/1336649227.0.x.jpg');
+    
+    addBookToLibrary(myBook);
+    addBookToLibrary(myBook1);
+    addBookToLibrary(myBook2);
+}
 
 window.addEventListener('DOMContentLoaded', () => {
 
 
 
-    console.log(JSON.parse(sessionStorage.getItem('myLibrary')));
+    console.log(JSON.parse(localStorage.getItem('myLibrary')));
 
     
-    if (sessionStorage.getItem('myLibrary')) {
-        myLibrary = JSON.parse(sessionStorage.getItem('myLibrary'))
+    if (localStorage.getItem('myLibrary')) {
+        myLibrary = JSON.parse(localStorage.getItem('myLibrary'))
         renderBooks()
     } else {
         myLibrary = []
-        sessionStorage.setItem("myLibrary", myLibrary)
+        seedDummyData()
+        localStorage.setItem("myLibrary", myLibrary)
     }
 
-    // if (myLibrary.length > 0) {
-    //     renderBooks()
 
-    // }
 
     
 
