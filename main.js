@@ -1,5 +1,5 @@
 // RESET LOCAL STORGE IF NEEDED
-localStorage.clear()
+//localStorage.clear()
 let myLibrary = [];
 
 function Book(title, author, pages, isRead, imgSrc) {
